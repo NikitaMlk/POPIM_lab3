@@ -1,0 +1,20 @@
+---
+title: Authorization
+---
+
+The **Gaming Platform API** uses token-based authentication for secure access.
+
+## Authentication Method
+
+To access the API, you need to use an **API Key**. Follow these steps to authenticate:
+
+1. Register your account on the platform.
+2. Once logged in, navigate to the **API Settings** page.
+3. Generate your **API Key**.
+
+## Using the API Key
+
+You need to pass the API key in the `Authorization` header of each request:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" https://api.example.com/endpoint

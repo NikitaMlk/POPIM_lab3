@@ -1,0 +1,104 @@
+openapi: 3.0.0
+info:
+  title: Gaming Platform API
+  description: REST API for a gaming platform
+  version: 1.0.0
+servers:
+  - url: https://api.gamingplatform.com
+    description: Production server
+paths:
+  /games:
+    get:
+      summary: Get all games
+      responses:
+        "200":
+          description: List of games
+    post:
+      summary: Add a new game
+      responses:
+        "201":
+          description: Game created
+  /games/{id}:
+    get:
+      summary: Get a game by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Game found
+        "404":
+          description: Game not found
+    put:
+      summary: Update a game
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Game updated
+    delete:
+      summary: Delete a game
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Game deleted
+
+  /players:
+    get:
+      summary: Get all players
+      responses:
+        "200":
+          description: List of players
+    post:
+      summary: Register a new player
+      responses:
+        "201":
+          description: Player registered
+  /players/{id}:
+    get:
+      summary: Get player info
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Player found
+        "404":
+          description: Player not found
+    put:
+      summary: Update player info
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Player updated
+    delete:
+      summary: Delete a player
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Player deleted
